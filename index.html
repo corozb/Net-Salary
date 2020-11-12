@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  </link>
+
+</head>
+<body onload="salaryCalculate()">
+  <div class="container text-center">
+    <div class="display-2">Salario Neto</div>
+    <table class="table">
+      <tr>
+        <td>Role</td>
+        <td>Hours</td>
+        <td>Years</td>
+      </tr>
+      <tr>
+        <td>
+          <select id="role" class="form-control" onchange="salaryCalculate()">
+            <option value="1">CEO</option>
+            <option value="2">Developer</option>
+            <option value="3">Product Manager</option>
+          </select>
+        </td>
+        <td>
+          <select id="hours" class="form-control" onchange="salaryCalculate()">
+            <script>
+              for (let i = 0; i <= 50; i++) {
+                document.write('<option value=' + i + '>' + i + '</option>')
+              }
+            </script>
+          </select>
+        </td>
+        <td>
+          <select id="years" class="form-control" onchange="salaryCalculate()">
+            <script>
+              for (let i = 0; i <= 40; i++) {
+                document.write('<option value=' + i + '>' + i + '</option>')
+              }
+            </script>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table">
+      <tr>
+        <td colspan="2">
+          <h2>PERCEPCIONES</h2>
+        </td>
+        <td></td>
+        <td colspan="2">
+          <h2>DEDUCCIONES</h2>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Salario Básico</td>
+        <td><span id='basicSalary'> </span></td>
+        <td>ISR</td>
+        <td><span id='isr'></span></td>
+      </tr>
+      <tr>
+        <td>Canasta Familiar</td>
+        <td><span id="familiar"></span></td>
+        <td>EPS</td>
+        <td><span id="eps"></span></td>
+      </tr>
+      <tr>
+        <td>Apoyo</td>
+        <td><span id="benefit"></span></td>
+        <td>AFORE</td>
+        <td><span id="afore"></span></td>
+      </tr>
+      <tr>
+        <td>Antigüedad</td>
+        <td><span id="long"></span></td>
+        <td>Sindicato</td>
+        <td><span id="sindicate"></span></td>
+      </tr>
+      <tr>
+        <td>Estimulo</td>
+        <td><span id="incentive"></span></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h4>TOTAL INGRESO</h4>
+        </td>
+        <td><span id="income"></span></td>
+        <td colspan="2">
+          <h4>TOTAL DEDUCCIONES</h4>
+        </td>
+        <td><span id="deductions"></span></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h4>SALARIO NETO</h4>
+        </td>
+        <td colspan="2">
+          <h4><span id="netSalary"></span></h4>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
